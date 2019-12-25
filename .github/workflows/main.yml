@@ -9,19 +9,13 @@ jobs:
 
     steps:
     - name: Docker Publish
-      uses: manusa/actions-publish-docker@v1.0.1
-      with:
-        # Name of the Docker image
-        name: splunk-connect-for-email-postfix/splunk-connect-for-email-postfix
-        # Tag for the Docker image
-        tag: latest
-        # Script body to compute tag name for the Docker image, has context as the main function argument
-        tag script: # optional
-        # Username for Docker registry
-        username: rfaircloth-splunk
-        # Password for Docker registry
-        password: `GITHUB_TOKEN`
-        # Registry URL
-        registry: docker.pkg.github.com
-        # Don't skip pull requests
-        include pull requests: # optional
+      uses: zenato/docker-action@v1.0.0
+        with:
+          # Registry username
+          username: rfaircloth-splunk
+          # Registry password
+          password: ${{ secrets.GITHUB_TOKEN }}
+          # Repository on registry
+          repository: splunk-connect-for-email-postfix
+          # Registry hostname
+          registry: docker.pkg.github.com
