@@ -16,3 +16,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           repository: rfaircloth-splunk/splunk-connect-for-email-postfix/splunk-connect-for-email-postfix
           registry: docker.pkg.github.com
+          tag: latest  
