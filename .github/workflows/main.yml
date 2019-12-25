@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Docker Publish
-      uses: zenato/docker-action@v1.0.0
-        with:
-          # Registry username
-          username: rfaircloth-splunk
-          # Registry password
-          password: ${{ secrets.GITHUB_TOKEN }}
-          # Repository on registry
-          repository: splunk-connect-for-email-postfix
-          # Registry hostname
-          registry: docker.pkg.github.com
+      - name: Docker Publish
+        uses: zenato/docker-action@v1.0.0
+          with:
+            # Registry username
+            username: rfaircloth-splunk
+            # Registry password
+            password: ${{ secrets.GITHUB_TOKEN }}
+            # Repository on registry
+            repository: splunk-connect-for-email-postfix
+            # Registry hostname
+            registry: docker.pkg.github.com
