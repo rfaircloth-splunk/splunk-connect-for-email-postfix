@@ -14,5 +14,5 @@ jobs:
         with:
           username: rfaircloth-splunk
           password: ${{ secrets.GITHUB_TOKEN }}
-          repository: docker.pkg.github.com/rfaircloth-splunk/splunk-connect-for-email-postfix
+          repository: rfaircloth-splunk/splunk-connect-for-email-postfix
           registry: docker.pkg.github.com
