@@ -8,7 +8,13 @@
 #work.  If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 FROM registry.access.redhat.com/ubi8/python-36
 
+ENV USER stoq
+ENV GROUP stoq
+
 USER root
+RUN groupadd -r $USER && useradd -r -g $GROUP $USER && \
+    mkdir -p /home/$USER/.stoq/plugins
+
 RUN cd /tmp ;\
     dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y; \
     dnf update -y ;\

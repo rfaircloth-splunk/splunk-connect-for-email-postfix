@@ -133,4 +133,4 @@ scache    unix  -       -       n       -       1       scache
 #  ${nexthop} ${user}
 stoqsink unix - n n - 20 pipe
         -o smtp_send_xforward_command=yes
-        flags=F user=nobody argv=/bin/stoqsink.py ${sender} ${size} ${recipient}
+        flags=F user=stoq argv=/bin/stoqsink.py ${sender} ${size} ${recipient}
