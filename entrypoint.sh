@@ -53,5 +53,5 @@ add_config_value "mynetworks" "${nets}"
 # If host mounting /var/spool/postfix, we need to delete old pid file before
 # starting services
 rm -f /var/spool/postfix/pid/master.pid
-umask 0000
+
 exec supervisord -c /etc/supervisord.conf

@@ -7,7 +7,7 @@ import traceback
 import logging
 import uuid
 from datetime import datetime
-
+import os
 
 OUTPUT_DIR = '/var/mailsink/'
 
@@ -30,6 +30,8 @@ def main(stdin):
     filename = create_filename(msg)
     newlines = str(msg).replace('\\n', '\n')
 
+
+    os.umask(0000)
     with open(OUTPUT_DIR + filename, 'w') as f:
         f.write(str(msg).replace('\\n', '\n'))
 
